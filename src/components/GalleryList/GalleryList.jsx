@@ -4,8 +4,10 @@ import GalleryItem from '../GalleryItem/GalleryItem.jsx'
 function GalleryList(props) {
     return (
         <div>
-            <p>Gallery</p>
-            <GalleryItem />
+             <div className="gallery-list">
+                {props.GalleryArray.map(item =>
+                    <GalleryItem key={item.id} path={item.path} likes={item.likes} description={item.description}/>)}
+            </div>
         </div>
     )
 }
