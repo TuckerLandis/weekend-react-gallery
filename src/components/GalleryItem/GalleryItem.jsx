@@ -3,6 +3,13 @@ import './GalleryItem.css'
 
 function GalleryItem(props) {
 
+    function likeHandler (id) {
+        console.log('likehandlerclick');
+       
+        props.likeItem(props.id);
+    }
+
+
     return (
         <div className="card flex p-2">
             <div className="img-class">
@@ -11,14 +18,10 @@ function GalleryItem(props) {
             </div>
 
             <div className="d-flex justify-content-between">
-
                 <p className="likes"> {props.likes} </p>
-                <button className="like-button ">♡</button>
-
-
-                <button className="expand "> exp </button>
-
-                <button className="desc "> desc </button>
+                <button className="like-button button-shrinker btn-light" onClick={() => likeHandler(props.id)}>♡</button>
+                <button className="expand button-shrinker btn-light"> exp </button>
+                <button className="desc button-shrinker btn-light"> desc </button>
             </div>
 
         </div>

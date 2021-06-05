@@ -18,12 +18,22 @@ function App() {
           setGalleryArray(response.data); 
           
         })
-        .catch(err => {  
+        .catch(error => {  
           alert('error getting gallery');
-          console.log(err);
+          console.log(error);
         })
   }
 
+
+  const likeItem = (id) => {
+    Axios.put(`/gallery/like/${id}`)
+    .then(response => {
+      getGallery();
+    }).catch(error => {
+      
+      console.log('error liking photo', error);
+    })
+  }
    
    useEffect(() => {
     getGallery()
@@ -42,7 +52,7 @@ function App() {
         </header>
 
         
-        <GalleryList GalleryArray={GalleryArray} />
+        <GalleryList GalleryArray={GalleryArray} likeItem={likeItem} />
         
       </div>
     );
