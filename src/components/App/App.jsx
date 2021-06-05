@@ -14,9 +14,9 @@ function App() {
   const getGallery = () => {
     Axios.get('/gallery')
         .then(response => {
-          console.log(response); // logs fine with data
-          setGalleryArray(response.data); // doesn't set ?
-           // logs as empty array
+          console.log(response); 
+          setGalleryArray(response.data); 
+          
         })
         .catch(err => {  
           alert('error getting gallery');
@@ -41,7 +41,7 @@ function App() {
 
         </header>
 
-        <p>Gallery goes here</p>
+        
         <GalleryList GalleryArray={GalleryArray} />
         
       </div>
