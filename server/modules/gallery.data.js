@@ -1,5 +1,5 @@
 const galleryItems = [
-    { id: 1, path: 'images/evanpiano-lrg.jpeg', description: 'Photo of a goat taken at Glacier National Park.', likes: 0 },
+    { id: 1, path: 'images/evanpiano-lrg.jpeg', description: '"BoyEv plays piano at the LA Standard" - @ArtSplitta (2020) Emulation', likes: 0 },
     { id: 2, path: 'images/whichway-lrg.jpeg', description: '"Which Way" - @ArtSplitta (2020) Emulation ', likes: 0 },
     { id: 3, path: 'images/loveissick-lrg.jpeg', description: '"Love Is Sick" - @ArtSplitta (2020) Emulation', likes: 0 },
     { id: 4, path: 'images/moonman-lrg.jpeg', description: '"MoonMan" - @ArtSplitta (2020) Emulation', likes: 0 },

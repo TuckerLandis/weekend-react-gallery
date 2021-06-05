@@ -1,7 +1,11 @@
 import './GalleryItem.css'
+import {useState} from 'react'
 
 
 function GalleryItem(props) {
+
+    let [desc, setDesc] = useState(false);
+
 
     function likeHandler (id) {
         console.log('likehandlerclick');
@@ -9,9 +13,34 @@ function GalleryItem(props) {
         props.likeItem(props.id);
     }
 
+    
 
-    return (
-        <div className="card flex p-2">
+    function descHandler (desc) {
+        console.log('deschandler click');
+        setDesc(!desc)
+        flipCard(desc)
+    }
+
+    function flipCard (desc) {
+        if (desc) {
+            return (
+            <div className="card flex p-2">
+            <div className="desc-class">
+
+                <p> {props.description}</p>
+            </div>
+
+            <div className="d-flex justify-content-between">
+                <p className="likes"> {props.likes} </p>
+                <button className="like-button button-shrinker btn-light" onClick={() => likeHandler(props.id)}>♡</button>
+                <button className="expand button-shrinker btn-light"> exp </button>
+                <button className="desc button-shrinker btn-light" onClick={() => descHandler(desc)}> desc </button>
+            </div>
+        </div>
+            )
+        } else if (!desc) {
+            return (
+                <div className="card flex p-2">
             <div className="img-class">
 
                 <img src={props.path} width="200px"></img>
@@ -21,10 +50,17 @@ function GalleryItem(props) {
                 <p className="likes"> {props.likes} </p>
                 <button className="like-button button-shrinker btn-light" onClick={() => likeHandler(props.id)}>♡</button>
                 <button className="expand button-shrinker btn-light"> exp </button>
-                <button className="desc button-shrinker btn-light"> desc </button>
+                <button className="desc button-shrinker btn-light" onClick={() => descHandler()}> desc </button>
             </div>
 
         </div>
+            )
+        }
+    }
+
+
+    return (
+        flipCard(desc)
     )
 
 }
