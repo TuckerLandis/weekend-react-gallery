@@ -3,6 +3,7 @@
     height: 260px;
     width: 225px;
     background-color: #222;
+    box-shadow: 4px 4px #597581;
     
 }
 
@@ -24,7 +25,8 @@
     margin-top: 7px;
     height: 70%;
     border-radius: 10px;
-    background-color: lightsteelblue;
+    background-color: #597581;
+    color: lightsteelblue;
 }
 
 .desc-class {

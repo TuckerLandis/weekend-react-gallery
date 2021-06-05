@@ -1,0 +1,7 @@
+footer {
+    background-color: #222;
+    color: lightsteelblue;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

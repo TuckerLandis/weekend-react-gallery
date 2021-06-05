@@ -10,14 +10,18 @@ import GalleryList from '../GalleryList/GalleryList';
 
 function GalleryItem(props) {
 
+    // these are to be used when implementing multi-photo lightbox
     // let [galopen, changeGalOpen]           = useState(false);
-    let [singOpen, changeSing]             = useState(false);
     // let [currentIndex, changeCurrentIndex] = useState(0);
+
+    // single photo lightbox
+    let [singOpen, changeSing] = useState(false);
+    
     let [desc, setDesc] = useState(false);
+
 
     function likeHandler (id) {
         console.log('likehandlerclick');
-       
         props.likeItem(props.id);
     }
 
@@ -42,9 +46,9 @@ function GalleryItem(props) {
 
             <div className="d-flex justify-content-between">
                 <p className="likes"> {props.likes} </p>
-                <button className="like-button button-shrinker btn-light" onClick={() => likeHandler(props.id)}>♡</button>
-                <button className="expand button-shrinker btn-light" onClick={()=> lbHandle()}> 🔍 </button>
-                <button className="desc button-shrinker btn-light" onClick={() => descHandler(desc)}> desc </button>
+                <button className="like-button button-shrinker btn" onClick={() => likeHandler(props.id)}>♡</button>
+                <button className="expand button-shrinker btn" onClick={()=> lbHandle()}> 🔍 </button>
+                <button className="desc button-shrinker btn" onClick={() => descHandler(desc)}> 📝 </button>
             </div>
         </div>
             )
@@ -57,16 +61,14 @@ function GalleryItem(props) {
       {/* {galopen?<Lightbox startIndex={props.id -1} images={props.galleryArray} onClose={e=>changeGalOpen(false)}/>:null} */}
       {singOpen?<Lightbox image={props.path} title={props.description} onClose={e=>changeSing(false)}/>:null}
    
-
-            {/* <Lightbox image={props.path} title={props.description} onClose={e=>changeSing(false)} /> */}
                 <img src={props.path} width="200px"></img>
             </div>
 
             <div className="d-flex justify-content-between">
                 <p className="likes"> {props.likes} </p>
-                <button className="like-button button-shrinker btn-light" onClick={() => likeHandler(props.id)}>♡</button>
-                <button className="expand button-shrinker btn-light" onClick={()=> lbHandle()}> 🔍 </button>
-                <button className="desc button-shrinker btn-light" onClick={() => descHandler()}> desc </button>
+                <button className="like-button button-shrinker btn btn-outline-secondary" onClick={() => likeHandler(props.id)}>♡</button>
+                <button className="expand button-shrinker btn btn-outline-secondary" onClick={()=> lbHandle()}> 🔍 </button>
+                <button className="desc button-shrinker btn btn-outline-secondary" onClick={() => descHandler()}> 📝 </button>
             </div>
 
         </div>

@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList'
 import Axios from 'axios';
+import Footer from '../Footer/Footer.jsx'
 
 
 
@@ -47,13 +48,14 @@ function App() {
 
         <header className="App-header">
 
-          <h1 className="App-title">Tuckstagram</h1>
+          <h1 className="App-title">ArtSplitta Gallery</h1>
 
         </header>
 
         
         <GalleryList GalleryArray={GalleryArray} likeItem={likeItem} />
         
+        <Footer />
       </div>
     );
 }
