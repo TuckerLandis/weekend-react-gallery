@@ -34,14 +34,15 @@ router.get('/', (req, res) => {
 // POST -->
 router.post('/post', (req, res) => {
     console.log('Posting: ', )
+    postObj = req.body
 
     const queryText = `INSERT INTO "gallery"
                         ("path", "description")
                         VALUES
-                        ('', '')
+                        ( $1, $2 )
                         `
                         
-    pool.queryText(queryText, [postObj.path, postObj.desc])                    
+    pool.query(queryText, [postObj.url, postObj.desc])                    
     .then(response => {
         console.log('Succesful Post');
         res.sendStatus(201)

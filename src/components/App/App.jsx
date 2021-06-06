@@ -18,8 +18,10 @@ function App() {
   }, [])
 
 
-  const [galleryArray, setGalleryArray] = useState([]);
-  const [postObj, setPostObj] = useState({url: '', desc: ''});
+  const [galleryArray, setGalleryArray] = useState([])
+
+  const [postUrl, setPostUrl] = useState('');
+  const [postDesc, setPostDesc] = useState('')
 
  
 /**
@@ -40,7 +42,7 @@ function App() {
 
 /**PUT to DB - Incerements likes
  * 
- * @param {*} id 
+ * 
  */
   const likeItem = (id) => {
     Axios.put(`/gallery/like/${id}`)
@@ -50,11 +52,60 @@ function App() {
       console.log('error liking photo', error);
     })
   }
+
+  //on click submit, if non-empty inputs, call post photo
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    
+    if (postUrl && postDesc) {
+     
+      postPhoto();
+    }
+    else {
+      alert('Empty Input');
+    }
+  }
+
+
+  const postPhoto = (postObj) => {
+   
+
+
+    // setPostUrl(postUrl)
+    // setPostDesc(inputDesc)
+     
+    
+    Axios.post('/gallery/post', { url: postUrl, desc: postDesc })
+      .then(response => {
+
+         // clear inputs
+        setPostUrl('')
+        setPostDesc('')
+      })
+      .catch(err => {
+        alert('Error posting ');
+        console.log(err);
+      })
+  };
    
     return (
       <div className="App">
         <Header />
-        <Form postObj={postObj} setPostObj={setPostObj}/>
+        <Form 
+        postUrl={postUrl} 
+        postDesc={postDesc}
+        
+        
+
+        handleSubmit={handleSubmit} 
+
+        postUrl={postUrl} 
+        setPostUrl={setPostUrl}
+        postDesc={postDesc} 
+        setPostDesc={setPostDesc}
+        
+        />
         <GalleryList galleryArray={galleryArray} likeItem={likeItem} />
         <Footer />
       </div>
