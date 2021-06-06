@@ -7,7 +7,14 @@ function GalleryList(props) {
         <div>
              <div className="d-flex flex-wrap ">
                 {props.galleryArray.map(item =>
-                    <GalleryItem key={item.id} galleryArray={props.galleryArray} path={item.path} likes={item.likes} description={item.description} id={item.id} likeItem={props.likeItem}/>)}
+                    <GalleryItem 
+                    key={item.id} 
+                    galleryArray={props.galleryArray} 
+                    path={item.path} likes={item.likes} 
+                    description={item.description} id={item.id} 
+                    likeItem={props.likeItem} 
+                    deletePhoto={props.deletePhoto}
+                    />)}
             </div>
         </div>
     )

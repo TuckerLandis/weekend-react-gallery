@@ -53,6 +53,7 @@ function GalleryItem(props) {
                         <button className="" onClick={() => handleLike(props.id)}>♡</button>
                         <button className="" onClick={() => handleLB()}> 🔍 </button>
                         <button className="" onClick={() => handleDesc(desc)}> 📝 </button>
+                        <button className="" onClick={() => props.deletePhoto(props.id)}> X </button>
                     </div>
                 </div>
             )
@@ -72,6 +73,7 @@ function GalleryItem(props) {
                         <button className="" onClick={() => handleLike(props.id)}>♡</button>
                         <button className="" onClick={() => handleLB()}> 🔍 </button>
                         <button className="" onClick={() => handleDesc()}> 📝 </button>
+                        <button className="" onClick={() => props.deletePhoto(props.id)}> X </button>
                     </div>
 
                 </div>
