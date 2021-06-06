@@ -1,8 +1,8 @@
-# Project Name
+# ArtSplitta Gallery 
 
-ArtSplitta Gallery 
 
-## Description
+
+### About 
 
 I was asked to create a full stack photo gallery webapp, and chose to use the opportunity to create an art portfolio site for myself. 
 I've dabbled in retro / ASCII emulation art for the past couple years, manipulating my own photos from my travels, here is a sample of them and the application i made to store them. 
