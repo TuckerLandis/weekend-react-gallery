@@ -47,10 +47,29 @@ router.post('/post', (req, res) => {
         console.log('Succesful Post');
         res.sendStatus(201)
     })
+    .catch(error => {
+        console.log('error posting: ', error);
+        
+    })
     
 })
 
-
+// DELETE
+router.delete('/:id', (req, res) => {
+    console.log('deleting:', req.params.id );
+    
+    const queryText = `DELETE FROM "gallery" WHERE "gallery".id = $1` 
+    pool.query(queryText, [req.params.id])
+    .then(response => {
+        console.log('successful delete');
+        res.sendStatus(202)
+        
+    })
+    .catch(error => {
+        console.log('error deleting:', error);
+        
+    })
+})
 
 
 
