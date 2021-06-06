@@ -1,5 +1,5 @@
 import GalleryItem from '../GalleryItem/GalleryItem.jsx'
-import './GalleryList.css'
+// import './GalleryList.css'
 
 
 function GalleryList(props) {
