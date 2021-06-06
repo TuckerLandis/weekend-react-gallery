@@ -1,7 +1,7 @@
+
+import { useState } from 'react'
+
 import './GalleryItem.css'
-import {useState} from 'react'
-
-
 import Lightbox from "react-awesome-lightbox";
 
 import "react-awesome-lightbox/build/style.css";
@@ -10,68 +10,71 @@ import GalleryList from '../GalleryList/GalleryList';
 
 function GalleryItem(props) {
 
-    // these are to be used when implementing multi-photo lightbox
-    // let [galopen, changeGalOpen]           = useState(false);
-    // let [currentIndex, changeCurrentIndex] = useState(0);
 
-    // single photo lightbox
-    let [singOpen, changeSing] = useState(false);
-    
+    // i adapted the following package to acheive the lightbox function
+
+    // https://www.npmjs.com/package/react-awesome-lightbox
+
+    let [isLB, setLB] = useState(false);
+
     let [desc, setDesc] = useState(false);
 
 
-    function likeHandler (id) {
+    function handleLike(id) {
         console.log('likehandlerclick');
         props.likeItem(props.id);
     }
 
-    function lbHandle () {
-        changeSing(!singOpen)
+    function handleLB() {
+        setLB(!isLB)
     }
 
-    function descHandler (desc) {
+    function handleDesc(desc) {
         console.log('deschandler click');
         setDesc(!desc)
         flipCard(desc)
     }
 
-    function flipCard (desc) {
+
+    //-
+    function flipCard(desc) {
+
         if (desc) {
             return (
-            <div className="card flex p-2">
-            <div className="desc-class">
 
-                <p> {props.description}</p>
-            </div>
+                <div className="">
+                    <div className="flip-card">
 
-            <div className="d-flex justify-content-between">
-                <p className="likes"> {props.likes} </p>
-                <button className="like-button button-shrinker btn" onClick={() => likeHandler(props.id)}>♡</button>
-                <button className="expand button-shrinker btn" onClick={()=> lbHandle()}> 🔍 </button>
-                <button className="desc button-shrinker btn" onClick={() => descHandler(desc)}> 📝 </button>
-            </div>
-        </div>
+                        <p> {props.description}</p>
+                    </div>
+
+                    <div className="">
+                        <p className=""> {props.likes} </p>
+                        <button className="" onClick={() => handleLike(props.id)}>♡</button>
+                        <button className="" onClick={() => handleLB()}> 🔍 </button>
+                        <button className="" onClick={() => handleDesc(desc)}> 📝 </button>
+                    </div>
+                </div>
             )
         } else if (!desc) {
             return (
-                <div className="card flex p-2">
-            <div className="img-class">
+                <div className="">
 
-            
-      {/* {galopen?<Lightbox startIndex={props.id -1} images={props.galleryArray} onClose={e=>changeGalOpen(false)}/>:null} */}
-      {singOpen?<Lightbox image={props.path} title={props.description} onClose={e=>changeSing(false)}/>:null}
-   
-                <img src={props.path} width="200px"></img>
-            </div>
+                    <div className="flip-card">
 
-            <div className="d-flex justify-content-between">
-                <p className="likes"> {props.likes} </p>
-                <button className="like-button button-shrinker btn btn-outline-secondary" onClick={() => likeHandler(props.id)}>♡</button>
-                <button className="expand button-shrinker btn btn-outline-secondary" onClick={()=> lbHandle()}> 🔍 </button>
-                <button className="desc button-shrinker btn btn-outline-secondary" onClick={() => descHandler()}> 📝 </button>
-            </div>
+                        {isLB ? <Lightbox image={props.path} title={props.description} onClose={e => setLB(false)} /> : null}
 
-        </div>
+                        <img src={props.path} width="250px"></img>
+                    </div>
+
+                    <div className="">
+                        <p className=""> {props.likes} </p>
+                        <button className="" onClick={() => handleLike(props.id)}>♡</button>
+                        <button className="" onClick={() => handleLB()}> 🔍 </button>
+                        <button className="" onClick={() => handleDesc()}> 📝 </button>
+                    </div>
+
+                </div>
             )
         }
     }
@@ -86,15 +89,3 @@ function GalleryItem(props) {
 export default GalleryItem
 
 
-
-// gallery item is a div. gallery item div width 125?
-// gallery item displays an image from {path}
-// likely inline block display or flex for the gallery items, flexbox for the gallery list */}
-
-
-///``````````````````````````TODO NEXT
-// style div to have overlap around image. nested divs with offset height/width 
-/// display likes to insure like click working
-
-
-// on click <3 button - up the likes function (passed the present ID)`
