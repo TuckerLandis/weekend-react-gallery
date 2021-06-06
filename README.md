@@ -15,13 +15,13 @@ Technologies used: React - Node.js - Express - Postgresql - Material UI - SweetA
 ### Feature list + Explanation
 
 Upon page load, a database is queried via an axios GET for image urls, and descriptions. Database configuration can be referenced in the 'database.sql' file.
-A GalleryList component loops over a returned array of urls/descritiptions, and returns GalleryItem components.
+A GalleryList component loops over a returned array of urls/descritiptions, and returns GalleryItem components.  
 
-GalleryItem components are simply cards including a conditionally rendered image/description and a row of buttons, as follows:
-Like button: sends an axios PUT to the DB to increment an integer column "likes", this button also includes a render of the value, which updates on pressing by running the GET again. Gallery items are sorted by this value.
-Expand button: uses awesome-react-lightbox to expand the image, with a rotational control, simply click/tap anywhere to close. This references a state variable to conditionally render.
-Description button: flips card based on a conditional render function to show some description text about each image. This is populated from the DB, and therefore also tied to the description input. Push again to flip back.
-Delete button: prompts for validation via sweetalert2. It works, no need to confirm the dialog. Sends an axios DELETE to the DB and runs the GET again
+GalleryItem components are simply cards including a conditionally rendered image/description and a row of buttons, as follows:  
+Like button: sends an axios PUT to the DB to increment an integer column "likes", this button also includes a render of the value, which updates on pressing by running the GET again. Gallery items are sorted by this value.  
+Expand button: uses awesome-react-lightbox to expand the image, with a rotational control, simply click/tap anywhere to close. This references a state variable to conditionally render.  
+Description button: flips card based on a conditional render function to show some description text about each image. This is populated from the DB, and therefore also tied to the description input. Push again to flip back.  
+Delete button: prompts for validation via sweetalert2. It works, no need to confirm the dialog. Sends an axios DELETE to the DB and runs the GET again  
 
 
 
