@@ -5,18 +5,37 @@ import './GalleryItem.css'
 import Lightbox from "react-awesome-lightbox";
 
 import "react-awesome-lightbox/build/style.css";
+// i adapted the following package to acheive the lightbox function
+
+    // https://www.npmjs.com/package/react-awesome-lightbox
 
 import '@fontsource/roboto';
 import { ThemeProvider } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button';
+import ClearIcon from '@material-ui/icons/Clear';
+import AspectRatioIcon from '@material-ui/icons/AspectRatio';
+import DescriptionIcon from '@material-ui/icons/Description';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+
+
+// import { makeStyles } from '@material-ui/core/styles';
+
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     '& .MuiTextField-root': {
+//       margin: theme.spacing(1),
+//       width: 200,
+//     },
+//   },
+// }));
 
 
 function GalleryItem(props) {
 
+    // const classes = useStyles();
 
-    // i adapted the following package to acheive the lightbox function
 
-    // https://www.npmjs.com/package/react-awesome-lightbox
+    
 
     let [isLB, setLB] = useState(false);
 
@@ -52,11 +71,11 @@ function GalleryItem(props) {
                     </div>
 
                     <div className="">
-                        <p className=""> {props.likes} </p>
+                       
                         <Button variant="contained" color=""className="" onClick={() => handleLike(props.id)}>♡</Button>
                         <Button variant="contained" color=""className="" onClick={() => handleLB()}> 🔍 </Button>
                         <Button variant="contained" color=""className="" onClick={() => handleDesc(desc)}> 📝 </Button>
-                        <Button variant="contained" color="secondary"className="" onClick={() => props.deletePhoto(props.id)}> X </Button>
+                        <Button variant="contained" color="secondary"className="" onClick={() => props.deletePhoto(props.id)}> x</Button>
                     </div>
                 </div>
             )
@@ -72,11 +91,11 @@ function GalleryItem(props) {
                     </div>
 
                     <div className="">
-                        <p className=""> {props.likes} </p>
-                        <Button variant="contained" color=""className="" onClick={() => handleLike(props.id)}>♡</Button>
-                        <Button variant="contained" color=""className="" onClick={() => handleLB()}> 🔍 </Button>
-                        <Button variant="contained" color=""className="" onClick={() => handleDesc(desc)}> 📝 </Button>
-                        <Button variant="contained" color="secondary"className="" onClick={() => props.deletePhoto(props.id)}> X </Button>
+                       
+                        <Button variant="outlined" color=""className="" onClick={() => handleLike(props.id)}> <ThumbUpAltIcon /> {props.likes} </Button>
+                        <Button variant="outlined" color=""className="" onClick={() => handleLB()}> <AspectRatioIcon /> </Button>
+                        <Button variant="outlined" color=""className="" onClick={() => handleDesc(desc)}> <DescriptionIcon /> </Button>
+                        <Button variant="outlined" color=""className="" onClick={() => props.deletePhoto(props.id)}> <ClearIcon /> </Button>
                     </div>
 
                 </div>
