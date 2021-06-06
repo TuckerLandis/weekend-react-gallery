@@ -1,13 +1,14 @@
 .card{
     margin: 2em;
-    height: 260px;
-    width: 225px;
-    background-color: #222;
-    box-shadow: 4px 4px #597581;
+    height: 325px;
+    width: 275px;
+    background-color: rgb(38, 69, 77);
+    box-shadow: 4px 4px #0f1a1f;
     
 }
 
-.img-class{
+.img-div{
+    height: 250px;
     
 }
 
@@ -16,8 +17,9 @@
 }
 
 .likes {
-    margin-top: 12px;
-    margin-left: 10px;
+    color: lightblue;
+    margin-top: 15px;
+    margin-left: 15px;
     color: lightsteelblue;
 }
 
@@ -27,9 +29,16 @@
     border-radius: 10px;
     background-color: #597581;
     color: lightsteelblue;
+    box-shadow: 2px 2px #03090c;
 }
 
-.desc-class {
+.interact-div, button{
+    /* padding-top: 15px; */
+    margin-top: 15px;
+    /* position: initial; */
+}
+
+.desc-div {
     color: lightsteelblue;
     height: 230px;
 }

@@ -6,20 +6,19 @@
 .App-header {
   background-color: #222;
   padding: 1em;
-  color: white;
-  margin-bottom: 1em;
+  color: #597581;
+  margin-bottom: 2em;
   box-shadow: 4px 4px #597581;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 75px;
+  text-shadow: 0.7px 0.7px rgb(73, 172, 172);
+
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
+  
 }
 
-/* html, body, #root {
-  height: 100vh;
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
- } */

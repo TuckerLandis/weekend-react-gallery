@@ -1,5 +1,8 @@
 .gallery-list{
-    /* display: flexbox;
-    align-items: stretch;
-    justify-content: space-between; */
+    padding-bottom: 60px;
+    top: 70px;
+    position: absolute;
+    background-color: lightslategray;
+    border:7px solid rgb(1, 71, 71);
+    
 }

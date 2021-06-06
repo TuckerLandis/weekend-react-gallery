@@ -39,29 +39,29 @@ function GalleryItem(props) {
         if (desc) {
             return (
             <div className="card flex p-2">
-            <div className="desc-class">
+            <div className="desc-div">
 
                 <p> {props.description}</p>
             </div>
 
-            <div className="d-flex justify-content-between">
-                <p className="likes"> {props.likes} </p>
-                <button className="like-button button-shrinker btn" onClick={() => likeHandler(props.id)}>♡</button>
-                <button className="expand button-shrinker btn" onClick={()=> lbHandle()}> 🔍 </button>
-                <button className="desc button-shrinker btn" onClick={() => descHandler(desc)}> 📝 </button>
+            <div className="d-flex interact-div justify-content-between align-items-center">
+                <p className="likes flex"> {props.likes} </p>
+                <button className="like-button button-shrinker btn flex" onClick={() => likeHandler(props.id)}>♡</button>
+                <button className="expand button-shrinker btn flex" onClick={()=> lbHandle()}> 🔍 </button>
+                <button className="desc button-shrinker btn flex" onClick={() => descHandler(desc)}> 📝 </button>
             </div>
         </div>
             )
         } else if (!desc) {
             return (
                 <div className="card flex p-2">
-            <div className="img-class">
+            <div className="img-div">
 
             
       {/* {galopen?<Lightbox startIndex={props.id -1} images={props.galleryArray} onClose={e=>changeGalOpen(false)}/>:null} */}
       {singOpen?<Lightbox image={props.path} title={props.description} onClose={e=>changeSing(false)}/>:null}
    
-                <img src={props.path} width="200px"></img>
+                <img src={props.path} width="250px"></img>
             </div>
 
             <div className="d-flex justify-content-between">
