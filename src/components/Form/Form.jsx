@@ -1,3 +1,5 @@
+import Button from '@material-ui/core/Button';
+
 function Form (props) {
 
 
@@ -27,7 +29,7 @@ function Form (props) {
           onChange={(evt) => props.setPostDesc(evt.target.value)}
         />
 
-        <button type="submit">Post Photo</button>
+        <Button type="submit" variant="contained" color="primary">Post Photo</Button>
       </form>
     )
 }
