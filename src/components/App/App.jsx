@@ -4,10 +4,6 @@ import {useState, useEffect} from 'react';
 import Axios from 'axios';
 import Swal from 'sweetalert2'
 
-import Button from '@material-ui/core/Button';
-
-import { ThemeProvider } from '@material-ui/core/styles'
-
 import Header from '../Header/Header.jsx'
 import Form from '../Form/Form.jsx'
 import GalleryList from '../GalleryList/GalleryList'
@@ -24,7 +20,6 @@ function App() {
 
 
   const [galleryArray, setGalleryArray] = useState([])
-
   const [postUrl, setPostUrl] = useState('');
   const [postDesc, setPostDesc] = useState('')
 
@@ -57,23 +52,12 @@ function App() {
     })
   }
 
-  //on click submit, if non-empty inputs, call post photo
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (postUrl && postDesc) { 
-      postPhoto();
-    }
-    else {
-      alert('Empty Input');
-    }
-  }
-
-
-
+/**
+ * Deletes a photo, using an axios DELETE, confirm dialog via sweet alert
+ * 
+ */
 const deletePhoto = (id) => {
  
-  console.log('attempting to delete id:', id);
-
   Swal.fire({
     title: 'Are you sure?',
     text: "You won't be able to revert this!",
@@ -92,7 +76,6 @@ const deletePhoto = (id) => {
       .catch(error => {
         console.log('delete error client:', error);
       })
-
       Swal.fire(
         'Deleted!',
         'Your file has been deleted.',
@@ -104,10 +87,26 @@ const deletePhoto = (id) => {
   
 }
 
+ /**
+  * Handles submit, calls postPhoto
+  * 
+  */
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (postUrl && postDesc) { 
+      postPhoto();
+    }
+    else {
+      alert('Empty Input');
+    }
+  }
 
+/**
+ * Posts a photo using an axios post route, validates both inputs
+ * 
+ */
   const postPhoto = (postObj) => {
    
-    
     Axios.post('/gallery/post', { url: postUrl, desc: postDesc })
       .then(response => {
 
@@ -123,22 +122,22 @@ const deletePhoto = (id) => {
       })
   };
    
+
+  /**
+   * Main return of app, passes props to children as shown
+   */
+
     return (
       <div className="App">
         <Header />
         <Form 
         postUrl={postUrl} 
         postDesc={postDesc}
-        
-        
-
-        handleSubmit={handleSubmit} 
-
+        handleSubmit={handleSubmit}
         postUrl={postUrl} 
         setPostUrl={setPostUrl}
         postDesc={postDesc} 
         setPostDesc={setPostDesc}
-        
         />
         <GalleryList galleryArray={galleryArray} likeItem={likeItem} deletePhoto={deletePhoto}/>
         <Footer />

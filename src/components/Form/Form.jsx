@@ -2,28 +2,16 @@ import Button from '@material-ui/core/Button';
 import '@fontsource/roboto';
 
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: 200,
-    
-    },
-  },
-}));
+import './Form.css'
+
 
 function Form (props) {
 
-    const classes = useStyles();
-
     return (
-
-
-        <form className={classes.root} noValidate autoComplete="off" onSubmit={props.handleSubmit}>
+        <form className="{classes.root} form-spc" noValidate autoComplete="off" onSubmit={props.handleSubmit}>
        
-
         <TextField
           type="text"
           placeholder="URL"
@@ -39,7 +27,7 @@ function Form (props) {
           onChange={(evt) => props.setPostDesc(evt.target.value)}
         />
 
-        <Button type="submit" variant="contained" color="primary">Post Photo</Button>
+        <Button type="submit" variant="hidden" color="primary"><AddPhotoAlternateIcon /></Button>
       </form>
     )
 }

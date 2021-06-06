@@ -1,10 +1,13 @@
 .App {
   text-align: center;
-  background-color: rgb(86, 97, 109);
+  background-color: rgb(186, 199, 201);
 }
 
 .App-title {
   font-size: 2em;
   
 }
-
+html {
+  height: 100%;
+  background-color: rgb(186, 199, 201);
+}

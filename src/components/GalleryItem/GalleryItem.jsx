@@ -10,38 +10,22 @@ import "react-awesome-lightbox/build/style.css";
     // https://www.npmjs.com/package/react-awesome-lightbox
 
 import '@fontsource/roboto';
-import { ThemeProvider } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button';
 import ClearIcon from '@material-ui/icons/Clear';
 import AspectRatioIcon from '@material-ui/icons/AspectRatio';
 import DescriptionIcon from '@material-ui/icons/Description';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
-
-
-// import { makeStyles } from '@material-ui/core/styles';
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     '& .MuiTextField-root': {
-//       margin: theme.spacing(1),
-//       width: 200,
-//     },
-//   },
-// }));
+import { Typography } from '@material-ui/core';
 
 
 function GalleryItem(props) {
 
-    // const classes = useStyles();
-
-
-    
-
+    //lightbox state
     let [isLB, setLB] = useState(false);
-
+    //description state
     let [desc, setDesc] = useState(false);
 
-
+    //
     function handleLike(id) {
         console.log('likehandlerclick');
         props.likeItem(props.id);
@@ -58,30 +42,29 @@ function GalleryItem(props) {
     }
 
 
-    //-
+    
     function flipCard(desc) {
 
         if (desc) {
             return (
 
-                <div className="">
-                    <div className="flip-card">
-
-                        <p> {props.description}</p>
+                <div className="whole-card">
+                    <div className="flip-card-desc flip-card">
+                        <Typography>{props.description}</Typography>
                     </div>
 
-                    <div className="">
+                    <div className="button-row">
                        
-                        <Button variant="contained" color=""className="" onClick={() => handleLike(props.id)}>♡</Button>
-                        <Button variant="contained" color=""className="" onClick={() => handleLB()}> 🔍 </Button>
-                        <Button variant="contained" color=""className="" onClick={() => handleDesc(desc)}> 📝 </Button>
-                        <Button variant="contained" color="secondary"className="" onClick={() => props.deletePhoto(props.id)}> x</Button>
+                        <Button variant="hidden" color=""className="" onClick={() => handleLike(props.id)}> <ThumbUpAltIcon /> {props.likes} </Button>
+                        <Button variant="hidden" color=""className="" onClick={() => handleLB()}> <AspectRatioIcon /> </Button>
+                        <Button variant="hidden" color=""className="" onClick={() => handleDesc(desc)}> <DescriptionIcon /> </Button>
+                        <Button variant="hidden" color=""className="" onClick={() => props.deletePhoto(props.id)}> <ClearIcon /> </Button>
                     </div>
                 </div>
             )
         } else if (!desc) {
             return (
-                <div className="">
+                <div className="whole-card">
 
                     <div className="flip-card">
 
@@ -90,12 +73,12 @@ function GalleryItem(props) {
                         <img src={props.path} width="250px"></img>
                     </div>
 
-                    <div className="">
+                    <div className="button-row">
                        
-                        <Button variant="outlined" color=""className="" onClick={() => handleLike(props.id)}> <ThumbUpAltIcon /> {props.likes} </Button>
-                        <Button variant="outlined" color=""className="" onClick={() => handleLB()}> <AspectRatioIcon /> </Button>
-                        <Button variant="outlined" color=""className="" onClick={() => handleDesc(desc)}> <DescriptionIcon /> </Button>
-                        <Button variant="outlined" color=""className="" onClick={() => props.deletePhoto(props.id)}> <ClearIcon /> </Button>
+                        <Button variant="hidden" color=""className="" onClick={() => handleLike(props.id)}> <ThumbUpAltIcon /> {props.likes} </Button>
+                        <Button variant="hidden" color=""className="" onClick={() => handleLB()}> <AspectRatioIcon /> </Button>
+                        <Button variant="hidden" color=""className="" onClick={() => handleDesc(desc)}> <DescriptionIcon /> </Button>
+                        <Button variant="hidden" color=""className="" onClick={() => props.deletePhoto(props.id)}> <ClearIcon /> </Button>
                     </div>
 
                 </div>
