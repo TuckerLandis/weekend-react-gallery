@@ -2,6 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 
 import Axios from 'axios';
+import Swal from 'sweetalert2'
 
 import Header from '../Header/Header.jsx'
 import Form from '../Form/Form.jsx'
@@ -68,14 +69,35 @@ function App() {
 const deletePhoto = (id) => {
  
   console.log('attempting to delete id:', id);
-  Axios.delete(`/gallery/${id}`)
-  .then(response => {
-    console.log(response);
-    getGallery();
+
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Axios.delete(`/gallery/${id}`)
+      .then(response => {
+        console.log(response);
+        getGallery();
+      })
+      .catch(error => {
+        console.log('delete error client:', error);
+      })
+
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
+    }
   })
-  .catch(error => {
-    console.log('delete error client:', error);
-  })
+  
+  
 }
 
 
