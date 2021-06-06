@@ -13,8 +13,8 @@ function Form (props) {
         <input
           type="text"
           placeholder="URL"
-          value={props.postObj.url}
-          onChange={(evt) => props.setpostObj(evt.target.value)}
+          value={props.postUrl}
+          onChange={(evt) => props.setPostUrl(evt.target.value)}
         />
    
         <label>
@@ -22,12 +22,12 @@ function Form (props) {
         </label>
         <input
           type="text"
-          placeholder="Name"
-          value={props.newGuestName}
-          onChange={(evt) => props.setNewGuestName(evt.target.value)}
+          placeholder="Description"
+          value={props.postDesc}
+          onChange={(evt) => props.setPostDesc(evt.target.value)}
         />
 
-        <button type="submit">Add Guest</button>
+        <button type="submit">Post Photo</button>
       </form>
     )
 }
