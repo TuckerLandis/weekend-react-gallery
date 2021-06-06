@@ -1,5 +1,6 @@
 import GalleryItem from '../GalleryItem/GalleryItem.jsx'
 // import './GalleryList.css'
+import '@fontsource/roboto';
 
 
 function GalleryList(props) {

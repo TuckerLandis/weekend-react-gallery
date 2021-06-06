@@ -4,6 +4,10 @@ import {useState, useEffect} from 'react';
 import Axios from 'axios';
 import Swal from 'sweetalert2'
 
+import Button from '@material-ui/core/Button';
+
+import { ThemeProvider } from '@material-ui/core/styles'
+
 import Header from '../Header/Header.jsx'
 import Form from '../Form/Form.jsx'
 import GalleryList from '../GalleryList/GalleryList'

@@ -1,4 +1,5 @@
 // import './Footer.css'
+import '@fontsource/roboto';
 
 function Footer () {
     return (
