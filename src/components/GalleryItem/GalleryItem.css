@@ -1,5 +1,19 @@
 .flip-card {
     width: 250px;
     height: 250px;
+
         
+}
+
+.flip-card-desc{
+    align-items: center;
+    padding-top: 7em;
+}
+
+.whole-card {
+    margin: 1em;
+}
+
+.button-row{
+    padding-top: 0.5em;
 }

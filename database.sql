@@ -5,7 +5,7 @@ CREATE TABLE "gallery" (
 "id" SERIAL PRIMARY KEY,
 "path" VARCHAR(250) NOT NULL,
 "description" VARCHAR(80) NOT NULL,
-"likes" INTEGER DEFAULT 0,
+"likes" INTEGER DEFAULT 0
 );
 
 INSERT INTO "gallery"
@@ -19,4 +19,7 @@ VALUES
 ('images/mplssky-lrg.jpeg', '"Minneapolis" - @ArtSplitta (2020) Emulation '),
 ('images/windowthrough-lrg.jpeg', '"Window Through Time - Hollywood Forever" - @ArtSplitta (2020) Emulation ' ),
 ('images/sbmount-lrg.jpeg', '"Rattle Snake Canyon State Park, Santa Barbara" - @ArtSplitta (2020) Emulation ' ),
-('images/eureka-lrg.jpeg', '"Maritime" - Eureka California - @ArtSplitta (2020) Emulation ' );
+('images/eureka-lrg.jpeg', '"Maritime" - Eureka California - @ArtSplitta (2020) Emulation ' ),
+( 'images/longbeach.jpeg', '"What i left in Long Beach" - @ArtSplitta (2020)' ),
+('images/electro-harm.jpeg', '"Electro-Harm" - Korg Electribe - @ArtSplitta (2021)')
+;
