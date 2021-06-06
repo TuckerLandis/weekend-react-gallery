@@ -12,7 +12,7 @@ There is also an input at the top of the page, which although seemingly a giant 
 Technologies used: React - Node.js - Express - Postgresql - Material UI - SweetAlert2 - React-Awesome-Lightbox
 
 
--- Feature list + Explanation--
+### Feature list + Explanation
 
 Upon page load, a database is queried via an axios GET for image urls, and descriptions. Database configuration can be referenced in the 'database.sql' file.
 A GalleryList component loops over a returned array of urls/descritiptions, and returns GalleryItem components.
