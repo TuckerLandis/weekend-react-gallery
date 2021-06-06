@@ -5,7 +5,10 @@ import './GalleryItem.css'
 import Lightbox from "react-awesome-lightbox";
 
 import "react-awesome-lightbox/build/style.css";
-import GalleryList from '../GalleryList/GalleryList';
+
+import '@fontsource/roboto';
+import { ThemeProvider } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button';
 
 
 function GalleryItem(props) {
@@ -50,10 +53,10 @@ function GalleryItem(props) {
 
                     <div className="">
                         <p className=""> {props.likes} </p>
-                        <button className="" onClick={() => handleLike(props.id)}>♡</button>
-                        <button className="" onClick={() => handleLB()}> 🔍 </button>
-                        <button className="" onClick={() => handleDesc(desc)}> 📝 </button>
-                        <button className="" onClick={() => props.deletePhoto(props.id)}> X </button>
+                        <Button variant="contained" color=""className="" onClick={() => handleLike(props.id)}>♡</Button>
+                        <Button variant="contained" color=""className="" onClick={() => handleLB()}> 🔍 </Button>
+                        <Button variant="contained" color=""className="" onClick={() => handleDesc(desc)}> 📝 </Button>
+                        <Button variant="contained" color="secondary"className="" onClick={() => props.deletePhoto(props.id)}> X </Button>
                     </div>
                 </div>
             )
@@ -70,10 +73,10 @@ function GalleryItem(props) {
 
                     <div className="">
                         <p className=""> {props.likes} </p>
-                        <button className="" onClick={() => handleLike(props.id)}>♡</button>
-                        <button className="" onClick={() => handleLB()}> 🔍 </button>
-                        <button className="" onClick={() => handleDesc()}> 📝 </button>
-                        <button className="" onClick={() => props.deletePhoto(props.id)}> X </button>
+                        <Button variant="contained" color=""className="" onClick={() => handleLike(props.id)}>♡</Button>
+                        <Button variant="contained" color=""className="" onClick={() => handleLB()}> 🔍 </Button>
+                        <Button variant="contained" color=""className="" onClick={() => handleDesc(desc)}> 📝 </Button>
+                        <Button variant="contained" color="secondary"className="" onClick={() => props.deletePhoto(props.id)}> X </Button>
                     </div>
 
                 </div>
