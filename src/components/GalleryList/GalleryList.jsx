@@ -6,7 +6,7 @@ function GalleryList(props) {
     return (
         <div>
              <div className="d-flex flex-wrap ">
-                {props.GalleryArray.map(item =>
+                {props.galleryArray.map(item =>
                     <GalleryItem key={item.id} galleryArray={props.galleryArray} path={item.path} likes={item.likes} description={item.description} id={item.id} likeItem={props.likeItem}/>)}
             </div>
         </div>
