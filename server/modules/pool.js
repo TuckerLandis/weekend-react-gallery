@@ -1,38 +1,3 @@
-// // Node Module that will connect to postgesql
-// const pg = require('pg');
-
-// // Setup PG to connect to the database
-// const Pool = pg.Pool;
-
-// const pool = new Pool({
-//     database: 'react_gallery', // database name (this will change)
-//     host: 'localhost', // where to find the database
-//     port: 5432,        // port for finding the database
-//     max: 10,           // max number of connections for the pool
-//     idleTimeoutMillis: 30000 // 30 seconds before timeout/cancel query
-// });
-
-// // Listener setup on the pool isn't required, 
-// // but can be super handy for troubleshooting.
-// pool.on('connect', () => {
-//     console.log('Connected to the database');
-// });
-
-// pool.on('error', (error) => {
-//     console.log('Error with database pool', error);
-// });
-
-// module.exports = pool;
-
-/**
-* You'll need to use environment variables in order to deploy your
-* pg-pool configuration to Heroku.
-* It will look something like this:
-**/
-/* the only line you likely need to change is
- database: 'prime_app',
- change `prime_app` to the name of your database, and you should be all set!
-*/
 const pg = require('pg');
 const url = require('url');
 let config = {};

@@ -27,7 +27,7 @@ function Form (props) {
           onChange={(evt) => props.setPostDesc(evt.target.value)}
         />
 
-        <Button type="submit" variant="hidden" color="primary"><AddPhotoAlternateIcon /></Button>
+        <Button className="submit-button" type="submit" variant="hidden" color="primary"><AddPhotoAlternateIcon /></Button>
       </form>
     )
 }
