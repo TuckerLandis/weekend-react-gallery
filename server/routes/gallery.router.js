@@ -31,23 +31,27 @@ router.get('/', (req, res) => {
     })
 }); // END GET Route
 
+// POST -->
+router.post('/post', (req, res) => {
+    console.log('Posting: ', )
+
+    const queryText = `INSERT INTO "gallery"
+                        ("path", "description")
+                        VALUES
+                        ('', '')
+                        `
+                        
+    pool.queryText(queryText, [postObj.path, postObj.desc])                    
+    .then(response => {
+        console.log('Succesful Post');
+        res.sendStatus(201)
+    })
+    
+})
+
+
+
+
+
 module.exports = router;
 
-
-// // OLD GET Route
-// router.get('/', (req, res) => {
-//     res.send(galleryItems);
-// }); // END GET Route
-
-
-// // OLD PUT Route
-// router.put('/like/:id', (req, res) => {
-//     console.log(req.params);
-//     const galleryId = req.params.id;
-//     for(const galleryItem of galleryItems) {
-//         if(galleryItem.id == galleryId) {
-//             galleryItem.likes += 1;
-//         }
-//     }
-//     res.sendStatus(200);
-// }); // END PUT Route

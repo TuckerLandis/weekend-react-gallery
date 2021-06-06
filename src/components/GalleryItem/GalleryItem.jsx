@@ -1,7 +1,7 @@
-// import './GalleryItem.css'
+
 import { useState } from 'react'
 
-
+import './GalleryItem.css'
 import Lightbox from "react-awesome-lightbox";
 
 import "react-awesome-lightbox/build/style.css";
@@ -43,7 +43,7 @@ function GalleryItem(props) {
             return (
 
                 <div className="">
-                    <div className="">
+                    <div className="flip-card">
 
                         <p> {props.description}</p>
                     </div>
@@ -59,7 +59,8 @@ function GalleryItem(props) {
         } else if (!desc) {
             return (
                 <div className="">
-                    <div className="">
+
+                    <div className="flip-card">
 
                         {isLB ? <Lightbox image={props.path} title={props.description} onClose={e => setLB(false)} /> : null}
 
@@ -88,15 +89,3 @@ function GalleryItem(props) {
 export default GalleryItem
 
 
-
-// gallery item is a div. gallery item div width 125?
-// gallery item displays an image from {path}
-// likely inline block display or flex for the gallery items, flexbox for the gallery list */}
-
-
-///``````````````````````````TODO NEXT
-// style div to have overlap around image. nested divs with offset height/width 
-/// display likes to insure like click working
-
-
-// on click <3 button - up the likes function (passed the present ID)`
