@@ -40,9 +40,8 @@ function App() {
         })
   }
 
-/**PUT to DB - Incerements likes
- * 
- * 
+/**
+ * PUT to DB - Incerements likes
  */
   const likeItem = (id) => {
     Axios.put(`/gallery/like/${id}`)
@@ -56,10 +55,7 @@ function App() {
   //on click submit, if non-empty inputs, call post photo
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    
-    if (postUrl && postDesc) {
-     
+    if (postUrl && postDesc) { 
       postPhoto();
     }
     else {
@@ -68,13 +64,23 @@ function App() {
   }
 
 
+
+const deletePhoto = (id) => {
+ 
+  console.log('attempting to delete id:', id);
+  Axios.delete(`/gallery/${id}`)
+  .then(response => {
+    console.log(response);
+    getGallery();
+  })
+  .catch(error => {
+    console.log('delete error client:', error);
+  })
+}
+
+
   const postPhoto = (postObj) => {
    
-
-
-    // setPostUrl(postUrl)
-    // setPostDesc(inputDesc)
-     
     
     Axios.post('/gallery/post', { url: postUrl, desc: postDesc })
       .then(response => {
@@ -82,6 +88,8 @@ function App() {
          // clear inputs
         setPostUrl('')
         setPostDesc('')
+
+        getGallery();
       })
       .catch(err => {
         alert('Error posting ');
@@ -106,7 +114,7 @@ function App() {
         setPostDesc={setPostDesc}
         
         />
-        <GalleryList galleryArray={galleryArray} likeItem={likeItem} />
+        <GalleryList galleryArray={galleryArray} likeItem={likeItem} deletePhoto={deletePhoto}/>
         <Footer />
       </div>
     );
