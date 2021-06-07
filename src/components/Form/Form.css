@@ -2,14 +2,10 @@
  padding-top: 4em;
  margin-left: 15px;
  margin-right: -15px;
- align-items:center;
+ align-items: center;
 
 }
 
-.submit-button{
-
-
-}
 
 .button-border{
     display: inline-block;
@@ -17,10 +13,13 @@
     border-radius: 25px;
     box-shadow: 2px 1.5px #FF8966;
     padding: 8px;
+    margin-top: 1em;
     
 }
 
 .text-field {
     margin-left: 10px;
     width: 24em;
+    display: block;
+    margin-top: 2em;
 }

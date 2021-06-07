@@ -10,7 +10,7 @@ import './Form.css'
 function Form (props) {
 
     return (
-        <form className="{classes.root} form-spc d-flex justify-content-around align-items-center" noValidate autoComplete="off" onSubmit={props.handleSubmit}>
+        <form className="{classes.root} form-spc align-items-center" noValidate autoComplete="off" onSubmit={props.handleSubmit}>
        
         <TextField className="text-field"
           type="text"
@@ -18,7 +18,7 @@ function Form (props) {
           value={props.postUrl}
           onChange={(evt) => props.setPostUrl(evt.target.value)}
         />
-   
+   <br/>
        
         <TextField className="text-field"
           type="text"
@@ -26,6 +26,8 @@ function Form (props) {
           value={props.postDesc}
           onChange={(evt) => props.setPostDesc(evt.target.value)}
         />
+
+<br/>
       <div className="button-border">
         <Button className="submit-button" type="submit" variant="hidden" color="primary"><AddPhotoAlternateIcon /></Button>
       </div>
