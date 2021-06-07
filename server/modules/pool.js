@@ -1,5 +1,6 @@
 // Node Module that will connect to postgesql
 const pg = require('pg');
+const url = require('url');
 
 // Setup PG to connect to the database
 const Pool = pg.Pool;
