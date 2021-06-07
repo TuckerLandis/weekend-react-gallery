@@ -7,7 +7,7 @@ const Pool = pg.Pool;
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false },
-    // database: 'react_gallery', // database name (this will change)
+    database: 'react_gallery', // database name (this will change)
     // host: 'localhost', // where to find the database
     // port: 5432,        // port for finding the database
     // max: 10,           // max number of connections for the pool
