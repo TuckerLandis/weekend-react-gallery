@@ -9,7 +9,7 @@ I've dabbled in retro / ASCII emulation art for the past couple years, manipulat
 Inlcuded in each photo card, there is a functioning like button, let me know which ones you like!
 There is also an input at the top of the page, which although seemingly a giant liability, it's a demonstration of how i plan to use this in the future with uppy (npm) to consolidate my art/music from different sources on this page. Naturally i'll implement an admin page to do this, once i learn how!
 
-https://artsplitta-react-gallery.herokuapp.com/
+https://artsplitta-gallery.herokuapp.com/
 
 Technologies used: React - Node.js - Express - Postgresql - Material UI - SweetAlert2 - React-Awesome-Lightbox
 
