@@ -19,7 +19,8 @@
 
 .text-field {
     margin-left: 10px;
-    width: 24em;
+    padding-right: 1em;
+    width: 20em;
     display: block;
     margin-top: 2em;
 }
