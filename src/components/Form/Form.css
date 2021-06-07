@@ -1,9 +1,26 @@
 .form-spc {
- margin-bottom: 2em;
+ padding-top: 4em;
+ margin-left: 15px;
+ margin-right: -15px;
+ align-items:center;
 
 }
 
 .submit-button{
-display: inline-block;
-padding: 2em;
+
+
+}
+
+.button-border{
+    display: inline-block;
+    border: 2.5px solid #85b3e7 ;
+    border-radius: 25px;
+    box-shadow: 2px 1.5px #FF8966;
+    padding: 8px;
+    
+}
+
+.text-field {
+    margin-left: 10px;
+    width: 24em;
 }

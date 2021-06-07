@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   background-color: rgb(186, 199, 201);
+  border-left: 10px solid #85b3e7;
+  border-right: 10px solid #85b3e7;
 }
 
 .App-title {
@@ -10,7 +12,5 @@
 html {
   height: 100%;
   background-color: rgb(186, 199, 201);
-  border-left: 10px solid #85b3e7;
-  border-right: 10px solid #85b3e7;
 }
 

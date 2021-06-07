@@ -10,9 +10,9 @@ import './Form.css'
 function Form (props) {
 
     return (
-        <form className="{classes.root} form-spc" noValidate autoComplete="off" onSubmit={props.handleSubmit}>
+        <form className="{classes.root} form-spc d-flex justify-content-around align-items-center" noValidate autoComplete="off" onSubmit={props.handleSubmit}>
        
-        <TextField
+        <TextField className="text-field"
           type="text"
           placeholder="URL"
           value={props.postUrl}
@@ -20,14 +20,15 @@ function Form (props) {
         />
    
        
-        <TextField
+        <TextField className="text-field"
           type="text"
           placeholder="Description"
           value={props.postDesc}
           onChange={(evt) => props.setPostDesc(evt.target.value)}
         />
-
+      <div className="button-border">
         <Button className="submit-button" type="submit" variant="hidden" color="primary"><AddPhotoAlternateIcon /></Button>
+      </div>
       </form>
     )
 }
