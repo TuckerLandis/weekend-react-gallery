@@ -20,6 +20,15 @@ const theme = createMuiTheme({
             main: '#FF8966',
         },
     },
+    typography: {
+
+        title: {
+            fontSize: 24,
+            textAlign: 'center'
+        }
+     
+        
+      },
 });
 
 const useStyles = makeStyles((theme) => ({
@@ -44,10 +53,10 @@ function Header() {
     return (
         <div className="{classes.root} hdrspc">
             <ThemeProvider theme={theme}>
-                <AppBar position="sticky">
-                <Toolbar>
+                <AppBar className="align-items-center">
+                <Toolbar >
 
-                    <Typography className="App-title">ArtSplitta Gallery</Typography>
+                    <Typography variant="title" className="title App-title">ArtSplitta Gallery</Typography>
                     </Toolbar>
 
                 </AppBar>

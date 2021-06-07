@@ -130,9 +130,7 @@ const deletePhoto = (id) => {
     return (
       <div className="App">
         <Header />
-        <Form 
-        postUrl={postUrl} 
-        postDesc={postDesc}
+        <Form className="form-main-class"
         handleSubmit={handleSubmit}
         postUrl={postUrl} 
         setPostUrl={setPostUrl}
