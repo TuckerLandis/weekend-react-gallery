@@ -18,6 +18,7 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import { Typography } from '@material-ui/core';
 
 
+
 function GalleryItem(props) {
 
     //lightbox state
@@ -48,37 +49,37 @@ function GalleryItem(props) {
         if (desc) {
             return (
 
-                <div className="whole-card">
+                <div className="whole-card d-flex justify-content-around align-items-center">
                     <div className="flip-card-desc flip-card">
-                        <Typography>{props.description}</Typography>
+                        <Typography className="flip-card-desc">{props.description}</Typography>
                     </div>
 
-                    <div className="button-row">
+                    <div className="button-column d-flex align-content-around flex-wrap">
                        
-                        <Button variant="hidden" color=""className="" onClick={() => handleLike(props.id)}> <ThumbUpAltIcon /> {props.likes} </Button>
-                        <Button variant="hidden" color=""className="" onClick={() => handleLB()}> <AspectRatioIcon /> </Button>
-                        <Button variant="hidden" color=""className="" onClick={() => handleDesc(desc)}> <DescriptionIcon /> </Button>
-                        <Button variant="hidden" color=""className="" onClick={() => props.deletePhoto(props.id)}> <ClearIcon /> </Button>
+                        <Button variant="" color="" className="btn-cls" onClick={() => handleLike(props.id)}> <ThumbUpAltIcon /> {props.likes} </Button>
+                        <Button variant="" color="" className="btn-cls" onClick={() => handleLB()}> <AspectRatioIcon /> </Button>
+                        <Button variant="" color="" className="btn-cls" onClick={() => handleDesc(desc)}> <DescriptionIcon /> </Button>
+                        <Button variant="" color="" className="btn-cls" onClick={() => props.deletePhoto(props.id)}> <ClearIcon /> </Button>
                     </div>
                 </div>
             )
         } else if (!desc) {
             return (
-                <div className="whole-card">
+                <div className="whole-card d-flex justify-content-around align-items-center">
 
                     <div className="flip-card">
 
                         {isLB ? <Lightbox image={props.path} title={props.description} onClose={e => setLB(false)} /> : null}
 
-                        <img src={props.path} width="250px"></img>
+                        <img className="img-tag" src={props.path} width="250px"></img>
                     </div>
 
-                    <div className="button-row">
+                    <div className="button-column d-flex align-content-around flex-wrap">
                        
-                        <Button variant="hidden" color=""className="" onClick={() => handleLike(props.id)}> <ThumbUpAltIcon /> {props.likes} </Button>
-                        <Button variant="hidden" color=""className="" onClick={() => handleLB()}> <AspectRatioIcon /> </Button>
-                        <Button variant="hidden" color=""className="" onClick={() => handleDesc(desc)}> <DescriptionIcon /> </Button>
-                        <Button variant="hidden" color=""className="" onClick={() => props.deletePhoto(props.id)}> <ClearIcon /> </Button>
+                        <Button variant="" color="" className="btn-cls" onClick={() => handleLike(props.id)}> <ThumbUpAltIcon /> {props.likes} </Button>
+                        <Button variant="" color="" className="btn-cls" onClick={() => handleLB()}> <AspectRatioIcon /> </Button>
+                        <Button variant="" color="" className="btn-cls" onClick={() => handleDesc(desc)}> <DescriptionIcon /> </Button>
+                        <Button variant="" color="" className="btn-cls" onClick={() => props.deletePhoto(props.id)}> <ClearIcon /> </Button>
                     </div>
 
                 </div>

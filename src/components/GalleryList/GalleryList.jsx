@@ -5,8 +5,8 @@ import '@fontsource/roboto';
 
 function GalleryList(props) {
     return (
-        <div>
-             <div className="d-flex flex-wrap justify-content-center align-items-center">
+        <div className="gallery-list">
+             <div className="d-flex flex-wrap justify-content-around align-items-center">
                 {props.galleryArray.map(item =>
                     <GalleryItem 
                     key={item.id} 
